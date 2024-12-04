@@ -1,0 +1,608 @@
+
+html {
+    scroll-behavior: smooth;
+    background-image: url("kepek/hatter8.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header{
+    background-color: #f48fb1; 
+    padding: 20px;
+    padding-bottom: 0;
+    text-align: center;
+    color: white;
+    margin: 0;
+    flex-basis: 100%;
+}
+
+nav{
+    background-color: #f48fb1; 
+    padding: 20px;
+    padding-top: 0;
+    text-align: center;
+    color: white;
+    margin: 0;
+}
+
+h1 {
+    margin: 0;
+    font-family: "Lucida Handwriting", cursive;
+    font-size: 300%;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+}
+
+nav ul li {
+    width: 80%;
+    margin: 0;
+    text-align: center;
+}
+
+nav ul li a {
+    width: 100%;
+    display: block;
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-weight: bold;
+    border-radius: 15px;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+}
+
+nav ul li a.active {
+    background-image: url(kepek/hatter8.jpg);
+    color: #f48fb1;
+}
+
+nav li a:hover {
+    color: #f48fb1;
+    background-image: url(kepek/hatter8.jpg);
+    font-size: larger;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    text-align: center;
+    background-color: #f48fb1;
+    color: white;
+    flex-basis: 100%;
+}
+
+/*KOKTEL VALASSZ*/
+#sajatkoktelcim {
+    margin-top: 30px;
+    color: #f48fb1;
+    text-align: center;
+    font-family: 'Tangerine', serif;
+    font-size: 100px;
+    text-shadow: 4px 4px 4px #f3c3d4;
+}
+
+form {
+    margin: 20px 0;
+}
+
+label {
+    font-weight: bold;
+}
+
+select, button {
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 50%;
+}
+
+button {
+    background-color: #f48fb1;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #f3c3d4;
+}
+
+img {
+    max-width: 400px;
+    margin-top: 20px;
+}
+
+#cocktailResult {
+    margin-top: 20px;
+    text-align: center;
+}
+
+
+/* Kezdőlap */
+.kezdokepek {
+    width: 100%;
+    border: grey solid 1px;
+}
+
+#kezdolap-container {
+    padding: 10px;
+    justify-items: center;
+}
+
+.szovegek {
+    background-color: #f8bbd0;
+    margin: 10px 0;
+    padding: 5px;
+    padding-top: 2px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-left: solid black 2px;
+    border-bottom: solid black 2px;
+}
+
+main div h2 {
+    font-family: 'Tangerine', serif;
+    font-size: 60px;
+    text-shadow: 4px 4px 4px #f3c3d4;
+} 
+
+/* Receptek */
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-bottom: 5%;
+    gap: 5px;
+}
+
+.flex-container a {
+    display: inline-block;
+    width: 48%;
+}
+
+.koktel-kep {
+    width: 100%;
+    border: grey solid 1px;
+    margin-top: 2%;
+    border-radius: 10px;
+}
+
+.koktel-kep:hover {
+    rotate: 1deg;
+}
+
+.erosseg {
+    font-weight: bold;
+}
+
+.nev {
+    font-style: italic;
+    font-size: larger;
+}
+
+#recept_oldal_gin, #recept_oldal_vodka, #recept_oldal_rum, #recept_oldal_whiskey, main h2 {
+    margin: 0 0 20px;
+    text-align: center;
+    font-family: "Lucida Handwriting", cursive;
+    font-size: 1.6rem;
+    font-weight: bolder;
+    padding-top: 15px;
+    color: #f48fb1;
+}
+
+.recept-container {
+    display: flex;
+    flex-direction: column; 
+    gap: 25px;
+    margin-top: 20px;
+    padding: 10px;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    background-color: #f3c3d4;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+}
+
+.recept-text {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    width: 100%; 
+    font-family: Arial, sans-serif;
+    line-height: 1.7;
+    padding-left: 3px;
+}
+
+.recept-nev {
+    font-size: 1.8em;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: white;
+    text-align: center;
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+ul li {
+    margin: 5px 0;
+    font-size: 1.1em;
+    line-height: 1.5;
+}
+
+.flip-card {
+    width: 400px; 
+    height: 500px; 
+    margin: auto;
+    cursor: pointer;
+    perspective: 1000px;
+}
+
+.flip-card-inner {
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    background-color: transparent;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card-eleje, .flip-card-hatulja {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    overflow: hidden;
+}
+
+.flip-card-eleje img {
+    height: 100%;
+    object-fit: cover; 
+    border-radius: 10px;
+}
+
+.flip-card-hatulja {
+    transform: rotateY(180deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f3c3d4;
+    color: #000; 
+}
+
+.erosseg {
+    font-weight: bold;
+    font-size: 1.2em;
+    color: white;
+    text-align: center;
+    margin-top: 5px;
+    margin-bottom: 3px;
+}
+
+.nev {
+    font-style: italic;
+    font-size: 1.1em;
+}
+
+h4 {
+    font-weight: bold;
+    margin-top: 10px;
+    font-size: 1.2em;
+    color: white;
+    margin-bottom: 3px;
+}
+
+#emailcimhelye {
+    background-color: #f3c3d4;
+    border:#f48fb1 solid 2px;
+    width: 50%;
+}
+
+/*VELEMENYEZES*/
+
+.galeria_lablec {
+    margin-top: 400px;
+}
+
+.elegedettseg {
+    text-align: center;
+    font-family: "Lucida Handwriting", cursive;
+    font-size: 30px;
+    font-weight: bolder;
+    margin-top: 60px;
+    margin-bottom: 0px;
+    color: #f48fb1;
+}
+
+
+
+/*JELENTKEZES*/
+
+.tanfolyam-container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 30px;
+    padding-top: 7px;
+}
+
+#jelentkezes-cim {
+    text-align: center;
+    color: #f48fb1;
+    font-size: 35px;
+}
+
+label {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+input, select, button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #f3c3d4;
+}
+
+.range-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#korertek {
+    font-weight: bold;
+    color: #333;
+}
+
+input[type="date"] {
+    padding: 5px;
+}
+
+button {
+    background-color: #f48fb1;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #f3c3d4;
+}
+
+.hiba {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.siker {
+    text-align: center;
+    color: #f3c3d4;
+    font-weight: bold;
+    width: 200px;
+}
+
+.gomb {
+    justify-items: center;
+}
+
+#megye {
+    width: 300px;
+}
+
+#kor_hiba {
+    width: 1%;
+}
+
+/*TABLET NEZET*/
+@media only screen and (min-width: 600px) {
+    body {
+        font-size: 18px;
+    }
+
+    header {
+        text-align: left;
+        padding: 20px;
+    }
+
+    .flex-container {
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-around;
+        margin-bottom: 0;
+        margin-top: 0;
+        gap: 5px;
+    }
+    
+    .flex-container a {
+        display: inline-block;
+        width: 48%;
+    }
+
+    .kezdokepek {
+        width: auto;
+        margin: 0 auto;
+        border-left: 10px dotted #f48fb1;
+        border-right: 10px dotted #f48fb1;
+    }
+
+    .recept-image {
+        width: 60%; 
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+
+    #kezdolap-container{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content:space-around;
+    }
+
+    .szovegek{
+        width: 45%;
+        margin-bottom: 2px;
+    }
+
+    .kezdokepek {
+        width: 45%;
+        margin-top: 10px;
+        margin-right: 0;
+        margin-left: 0;
+    }
+
+    #kep2{
+        order: 2;
+    }
+
+    #szoveg2{
+        order: 1;
+    }
+
+    #kep3{
+        order: 2;
+    }
+
+    #szoveg3{
+        order: 2;
+    }
+
+    .recept-text {
+        flex-direction: row;
+    }
+
+    .leiras {
+        width: 48%;
+    }
+
+    .flip-card {
+        width: 48%;
+    }
+
+    nav ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    nav ul li {
+        width: 23%;
+    }
+
+    header {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .flex-container a {
+        display: inline-block;
+        width: 20%;
+    }
+
+    .flex-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-bottom: 5%;
+        margin: 0;
+        gap: 10px;
+    }
+
+    .slick-dots li:nth-child(1) button:before{
+        background: url("kepek/macska_vendeg.jpg") no-repeat;
+        background-size: contain;
+    }
+    
+    .slick-dots li:nth-child(2) button:before{
+        background: url("kepek/vizilo_vendeg.jpg") no-repeat;
+        background-size: contain;
+    }
+    
+    .slick-dots li:nth-child(3) button:before{
+        background: url("kepek/polip_vendeg.jpg") no-repeat;
+        background-size: contain;
+    }
+    
+    .slick-dots li:nth-child(4) button:before{
+        background: url("kepek/hal_vendeg.jpg") no-repeat;
+        background-size: contain;
+    }
+    
+    .slick-dots li:nth-child(5) button:before{
+        background: url("kepek/panda_vendeg.jpg") no-repeat;
+        background-size: contain;
+    }
+    
+    .slick-dots li:nth-child(6) button:before{
+        background: url("kepek/zsiraf_vendeg.jpg") no-repeat;
+        background-size: contain;
+    }
+    
+    .slick-dots li button:before{
+        content: ''!important;
+        height:100%!important;
+        width: 100%!important;
+    }
+    .slick-dots li{
+        width: 100px!important;
+        height:100px!important;
+        margin: 0!important;
+    }
+    .slick-dots{
+        bottom: initial!important;
+    }
+
+    #szekson {
+        margin-bottom: 250px;
+    }
+}

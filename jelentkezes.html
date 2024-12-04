@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Kuczi Dorina Anna">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stilus.css">
+    <link rel="icon" href="kepek/ikon2.jpg" type="x-icon">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
+    <meta name="description" content="Jelentkezés">
+
+    <title>Koktél Tanfolyam Jelentkezés</title>
+    <style>
+        label.error {
+            color: #f48fb1; 
+            font-size: 0.9em; 
+            margin-top: 5px; 
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Cocktails</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Kezdőlap</a></li>
+            <li><a href="receptek.html">Receptek</a></li>
+            <li><a href="#" class="active">Jelentkezz</a></li>
+            <li><a href="galeria.html">Törzsvendégek</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <div class="tanfolyam-container">
+            <h1 id="jelentkezes-cim">Koktél Tanfolyam Jelentkezés</h1>
+            <form action="http://rf.uni-corvinus.hu/webfejlesztes/receive.php" method="get" id="myform" target="_blank">
+                <div>
+                    <label for="nev">Név:</label>
+                    <input type="text" id="nev" name="nev" placeholder="Abrosz Tiszkatosz">
+                </div>
+                <div>
+                    <label for="kor">Kor:</label>
+                    <div class="range-container">
+                        <input type="range" id="kor" name="kor" min="18" max="100" value="18">
+                        <span id="korertek">18</span>
+                    </div>
+                </div>
+                <div>
+                    <label for="megye">Megye:</label>
+                    <select id="megye" name="megye">
+                        <option value="" disabled selected>Válassz...</option>
+                        <option value="budapest">Budapest</option>
+                        <option value="bacs-kiskun">Bács-Kiskun</option>
+                        <option value="baranya">Baranya</option>
+                        <option value="bekes">Békés</option>
+                        <option value="borsod-abauj-zemplen">Borsod-Abaúj-Zemplén</option>
+                        <option value="csongrad-csanad">Csongrád-Csanád</option>
+                        <option value="fejer">Fejér</option>
+                        <option value="gyor-moson-sopron">Győr-Moson-Sopron</option>
+                        <option value="hajdu-bihar">Hajdú-Bihar</option>
+                        <option value="heves">Heves</option>
+                        <option value="jasz-nagykun-szolnok">Jász-Nagykun-Szolnok</option>
+                        <option value="komarom-esztergom">Komárom-Esztergom</option>
+                        <option value="nograd">Nógrád</option>
+                        <option value="pest">Pest</option>
+                        <option value="somogy">Somogy</option>
+                        <option value="szabolcs-szatmar-bereg">Szabolcs-Szatmár-Bereg</option>
+                        <option value="tolna">Tolna</option>
+                        <option value="vas">Vas</option>
+                        <option value="veszprem">Veszprém</option>
+                        <option value="zala">Zala</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="telefon">Telefonszám:</label>
+                    <input type="text" id="telefon" name="telefon" placeholder="06 30 007 0070">
+                </div>
+                <div>
+                    <label for="fo">Hány fővel érkezel:</label>
+                    <input type="number" id="fo" name="fo" min="0" max="6">
+                </div>
+                <div>
+                    <label for="email">Email cím:</label>
+                    <input type="email" id="email" name="email" placeholder="abrosz.tiszkatosz@gmail.com">
+                </div>
+                <div>
+                    <label for="datum">Tanfolyam dátuma:</label>
+                    <input type="week" id="datum" name="datum">
+                </div>
+                <div class="gomb">
+                    <button type="submit">Jelentkezés</button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Koktélok <br> Tanulás céljából elkészítve</p>
+    </footer>
+
+
+    <script src="jquery-3.7.1.js"></script>
+    <script src="jquery-validation-1.19.5/dist/jquery.validate.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#myform").validate({
+                rules: {
+                    nev: "required",
+                    kor: {
+                        required: true,
+                        min: 18,
+                        max: 100
+                    },
+                    megye: "required",
+                    telefon: {
+                        required: true,
+                        minlength: 10,
+                        maxlength: 15
+                    },
+                    fo: {
+                        required: true,
+                        min: 1,
+                        max: 6
+                    },
+                    email: {
+                        required: true,
+                        email: true
+                    },
+                    datum: "required"
+                },
+                messages: {
+                    nev: "Add meg a neved!",
+                    kor: {
+                        required: "Add meg az életkorodat!",
+                        min: "Az életkorod nem lehet kisebb 18-nál!",
+                        max: "Az életkorod nem lehet több 100-nál!"
+                    },
+                    megye: "Válassz egy megyét!",
+                    telefon: {
+                        required: "Add meg a telefonszámod!",
+                        minlength: "Legalább 10 számjegy kell!",
+                        maxlength: "Legfeljebb 15 számjegy lehet!"
+                    },
+                    fo: {
+                        required: "Add meg, hány fővel érkezel!",
+                        min: "Legalább 1 fővel kell érkezni!",
+                        max: "Legfeljebb 6 fővel érkezhetsz!"
+                    },
+                    email: {
+                        required: "Add meg az email címed!",
+                        email: "Érvényes email címet adj meg!"
+                    },
+                    datum: "Válassz egy dátumot!"
+                }
+            });
+
+            $("#kor").on("input", function () {
+                $("#korertek").text($(this).val());
+            });
+        });
+    </script>
+    
+</body>
+</html>

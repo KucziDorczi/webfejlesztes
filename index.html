@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Kuczi Dorina Anna">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stilus.css">
+    <link rel="icon" href="kepek/ikon2.jpg" type="x-icon">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
+    <meta name="description" content="Főoldal">
+    <title>Koktélok</title>
+</head>
+<body>
+    <header>
+        <h1>Cocktails</h1>
+    </header>
+
+    <nav>
+            <ul>
+                <li><a href="#" class="active">Kezdőlap</a></li>
+                <li><a href="receptek.html">Receptek</a></li>
+                <li><a href="jelentkezes.html">Jelentkezz</a></li>
+                <li><a href="galeria.html">Törzsvendégek</a></li>
+            </ul>
+        </nav>
+
+    <main id="kezdolap-container">
+
+        <img src="kepek/koktelok2.jpg" alt="Három rózsaszín koktél" class="kezdokepek" id="kep1">
+
+        <div class="szovegek" id="szoveg1">
+            <h2>Kiknek ajánlom ezt az oldalt?</h2>
+            <p>Ha már eleged van a matek órákból, és úgy érzed, hogy egy kis színt szeretnél vinni az életedbe, akkor itt a helyed! Ez a koktélokkal foglalkozó weboldal nemcsak a diákoknak szól, akik titokban a legjobb bulik receptjeit keresik, hanem a tanároknak is, akik egy kis inspirációra vágynak a következő tanári szünetre!</p>
+        </div>
+        
+        <img src="kepek/koktelok4.jpg" alt="Egy rózsaszín cosmopolitan koktél" class="kezdokepek" id="kep2">
+
+        <div class="szovegek"  id="szoveg2">
+            <h2>Milyen koktélokra számíthatsz?</h2>
+            <p>Az oldalunkon a legismertebb és legnépszerűbb alkoholos italok, mint a vodka, gin, whiskey és rum alapú koktélok széles választékát találhatod. Ezek az egyszerűen elkészíthető italok nemcsak kezdők számára ideálisak, hanem azoknak is, akik már tapasztaltabbak a koktélkészítésben.</p>
+        </div>
+
+        <img src="kepek/koktelok3.jpg" alt="rozsaszín koktél" class="kezdokepek" id="kep3">
+
+
+        <div class="szovegek" id="szoveg3">
+            <h2>Rólunk</h2>
+            <p>Egy fiatalos csapat (én) segít abban, hogy ne legyél teljesen vakon, ha esetleg a barátaid beállítanak a pultba összedobni valamit. Segítünk (én), hogy az ital elkészítését kirobbanó siker koronázza, és nem csupán állva tapsoljanak Téged, hanem tömegszörfölés után megkoronázzanak az ízlések királynőjének/királyának.</p>
+        </div>
+
+    </main>
+
+
+    <h1 id="sajatkoktelcim">Saját Koktél</h1>
+    <p>Töltsd ki az alábbi kérdőívet, és készítünk Neked egy koktélt csajosmajos!</p>
+
+    <form id="koktelurlap">
+        <label for="alcohol">Milyen alkoholt tennél bele?</label><br>
+        <select id="alcohol" name="alcohol" required>
+            <option value="rum">Rum</option>
+            <option value="vodka">Vodka</option>
+            <option value="whisky">Whisky</option>
+            <option value="gin">Gin</option>
+        </select>
+        <br><br>
+
+        <label for="szirup">Milyen szirupot tennél bele?</label><br>
+        <select id="szirup" name="szirup" required>
+            <option value="eper">Eper</option>
+            <option value="citrom">Citrom</option>
+            <option value="narancs">Narancs</option>
+            <option value="afonya">Áfonya</option>
+        </select>
+        <br><br>
+
+        <label for="occasion">Milyen alkalomkor fogyasztanád?</label><br>
+        <select id="occasion" name="occasion" required>
+            <option value="orom">Öröm</option>
+            <option value="banat">Bánat</option>
+            <option value="csak_ugy">Csak úgy</option>
+        </select>
+        <br><br>
+
+        <button type="submit">Koktélt kérek izibe!</button>
+    </form>
+
+    <div id="cocktailResult"></div>
+
+
+    <footer>
+        <form method="post" action="https://rf.unicorvinus.hu/webfejlesztes/receive.php" target="_blank">
+            <label for="hirlevel">
+                Iratkozz fel hírlevelünkre, és maradj naprakész!
+                <input type="checkbox" name="hir" id="hirlevel" checked>
+            </label>
+            <label for="email">
+                <br>Add meg az email címedet, hogy tudjuk hol találjunk!<br>
+                <input type="email" name="email" id="emailcimhelye">
+            </label>
+        </form>
+        <p>&copy; 2024 Koktélok <br> Tanulás céljából elkészítve</p>
+    </footer>
+
+    <script src="java.js"></script>
+</body>
+</html>
